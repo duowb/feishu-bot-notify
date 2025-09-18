@@ -19,7 +19,9 @@
     "notify": "node dist/index.mjs",
     "lint": "eslint \"src/**/*.{ts,tsx}\" \"examples/**/*.ts\"",
     "lint:fix": "pnpm lint --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"examples/**/*.ts\" \"README.md\""
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"examples/**/*.ts\" \"README.md\"",
+    "release": "bumpp",
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "feishu",
@@ -28,7 +30,21 @@
     "tsdown",
     "typescript"
   ],
-  "author": "",
+  "homepage": "https://github.com/duowb/feishu-bot-notify#readme",
+  "bugs": {
+    "url": "https://github.com/duowb/feishu-bot-notify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duowb/feishu-bot-notify.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "duo <duowenbo@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=16"
@@ -43,7 +59,8 @@
     "eslint": "^9.35.0",
     "prettier": "^3.6.2",
     "tsdown": "^0.15.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "bumpp": "^10.2.3"
   },
   "prettier": "@sxzz/prettier-config",
   "volta": {
