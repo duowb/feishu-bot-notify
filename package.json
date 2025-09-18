@@ -1,0 +1,53 @@
+{
+  "name": "feishu-bot-notify",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "基于 tsdown 打包的飞书机器人通知工具",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "watch": "tsdown --watch",
+    "notify": "node dist/index.mjs",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" \"examples/**/*.ts\"",
+    "lint:fix": "pnpm lint --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\" \"examples/**/*.ts\" \"README.md\""
+  },
+  "keywords": [
+    "feishu",
+    "lark",
+    "webhook",
+    "tsdown",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "ofetch": "^1.4.1"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^7.1.4",
+    "@sxzz/prettier-config": "^2.2.4",
+    "@types/node": "^24.5.2",
+    "eslint": "^9.35.0",
+    "prettier": "^3.6.2",
+    "tsdown": "^0.15.2",
+    "typescript": "^5.9.2"
+  },
+  "prettier": "@sxzz/prettier-config",
+  "volta": {
+    "node": "22.19.0"
+  },
+  "module": "./dist/index.js"
+}
