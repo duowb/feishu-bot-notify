@@ -8,9 +8,9 @@ export interface ComponentUpdateCardOptions {
    */
   version: string
   /**
-   * 更新说明列表，将渲染成 Markdown 项目符号
+   * 更新说明或者更新说明列表，将渲染成 Markdown 项目符号。
    */
-  changes: string[]
+  changes: string |  string[]
   /**
    * 按钮跳转链接，例如组件文档或体验地址
    */
@@ -168,7 +168,8 @@ function buildMetaColumn(componentName: string, version: string) {
   }
 }
 
-function formatChanges(changes: string[]): string {
+function formatChanges(changes: string | string[]): string {
+  if (!Array.isArray(changes)) return changes;
   if (!changes.length) {
     return '- 暂无更新内容'
   }
